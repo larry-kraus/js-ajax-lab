@@ -7,7 +7,7 @@
 //$('#myDiv').html("Goodbye world!");
 
  //newLi.appendTo('#cats');
-
+/*
 var ajax = $.get('https://ga-cat-rescue.herokuapp.com/api/cats/1')
     .done(function(data){
 
@@ -15,7 +15,7 @@ var ajax = $.get('https://ga-cat-rescue.herokuapp.com/api/cats/1')
 
  	var catOne = jQuery.parseJSON(cat1);
  	
- 	var newLi = $('#cats').append("<li>" + catOne.name + "</li");
+ 	var newLi = $('#cats').append("<li>" + catOne.name + "</li>");
  	
 
  	//console.log(catOne.note);
@@ -24,7 +24,7 @@ var ajax = $.get('https://ga-cat-rescue.herokuapp.com/api/cats/1')
 
  	//ul.appendChild(item);
     });
-
+*/
 
 var ajax1 = $.get('https://ga-cat-rescue.herokuapp.com/api/cats')
     .done(function(data){
@@ -32,6 +32,7 @@ var ajax1 = $.get('https://ga-cat-rescue.herokuapp.com/api/cats')
     	var catz = jQuery.parseJSON(cats);
     	for (var i = 0; i < catz.length; i++) {
     		console.log(catz[i]);
+    		var newItems = $('#cats').append("<li>" + catz[i].name + " - " catz[i].note + "</li>");
 
  		}
  	});
