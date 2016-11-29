@@ -25,15 +25,27 @@ var ajax = $.get('https://ga-cat-rescue.herokuapp.com/api/cats/1')
  	//ul.appendChild(item);
     });
 */
+var ajax2 = $.ajax({
+    url: 'https://ga-cat-rescue.herokuapp.com/api/cats',
+    method: 'POST',
+    dataType: 'json',
+    //data: {id: 765, name: "Whiskers", note: "Because I'm curious like a cat!"},
+   data: JSON.stringify({id: 765, name: "Whiskers", note: "Because I'm curious like a cat!"}),
+}).done(function(data){
+    console.log(data);
+  });  
+
 
 var ajax1 = $.get('https://ga-cat-rescue.herokuapp.com/api/cats')
     .done(function(data){
     	var cats = ajax1.responseText;
     	var catz = jQuery.parseJSON(cats);
     	for (var i = 0; i < catz.length; i++) {
-    		console.log(catz[i]);
-    		var newItems = $('#cats').append("<li>" + catz[i].name + " - " catz[i].note + "</li>");
-
+    		//console.log(catz[i]);
+    		var newItems = $('#cats').append("<li>" + catz[i].name + " - " + catz[i].note + "</li>");
  		}
  	});
+
+
  
+
